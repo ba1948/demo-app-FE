@@ -1,0 +1,10 @@
+.side__navbar {
+    .nav-item {
+        color: $info;
+
+        &.active {
+            color: $primary;
+            font-weight: bold;
+        }
+    }
+}

@@ -1,0 +1,12 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+@import "~bootstrap/dist/css/bootstrap.css";
+
+@import 'variables';
+
+@import './custom/navbar';
+@import './custom/pages';
+@import './custom/table';
+@import './custom/main';

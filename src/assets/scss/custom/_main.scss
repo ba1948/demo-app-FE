@@ -1,0 +1,46 @@
+.page__wrapper {
+
+}
+
+.sidebar__menu--container {
+    max-width: 250px;
+    padding: 0;
+}
+
+.sidebar__menu {
+    display: flex;
+    flex-direction: column;
+    max-width: 250px;
+    background: $white;
+    color: $primary;
+    padding: 15px;
+    min-height: 100vh;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    box-shadow: -1px 0px 5px 1px rgb(0, 0, 0, 0.5);
+
+    .sidebar__menu--header {
+
+    }
+}
+
+.main__header {
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50px;
+    background-color: $primary;
+    color: $white;
+}
+
+.main__container {
+    display: flex;
+}
+
+.content__container {
+    padding: 15px;
+    height: 100vh;
+    background-color: $light;
+}

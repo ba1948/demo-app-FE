@@ -6,6 +6,17 @@
     height: 50px;
     background-color: $primary;
     color: $white;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    button {
+        display: none;
+
+        @include media-breakpoint-down(md) {
+            display: flex;
+        }
+    }
 }
 
 .main__container {
@@ -24,14 +35,14 @@
     display: inline-block;
     height: 2rem;
     width: 2rem;
-  }
-  .custom-day.focused {
+}
+.custom-day.focused {
     background-color: #e6e6e6;
-  }
-  .custom-day.range, .custom-day:hover {
+}
+.custom-day.range, .custom-day:hover {
     background-color: rgb(2, 117, 216);
     color: white;
-  }
-  .custom-day.faded {
+}
+.custom-day.faded {
     background-color: rgba(2, 117, 216, 0.5);
-  }
+}

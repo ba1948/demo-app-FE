@@ -12,9 +12,20 @@
 }
 
 .sidebar__menu--container {
-    max-width: 0px;
+    max-width: 250px;
     padding: 0;
     transition: linear 0.5s;
+
+    @include media-breakpoint-down(md) {
+        max-width: 0px;
+        padding: 0;
+
+        .sidebar__menu {
+            max-width: 0;
+            padding: 0;
+            z-index: 0;
+        }
+    }
 
     &.menu--shown {
         max-width: 250px;
@@ -31,13 +42,15 @@
 .sidebar__menu {
     display: flex;
     flex-direction: column;
-    max-width: 0px;
+    max-width: 250px;
     background: $white;
     color: $primary;
     min-height: 100vh;
     position: sticky;
     top: 0;
     box-shadow: -1px 0px 5px 1px rgb(0, 0, 0, 0.5);
+    padding: 15px;
+            z-index: 1;
     transition: linear 0.5s;
 
     .sidebar__menu--header {

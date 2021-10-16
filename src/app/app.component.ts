@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
     templateUrl: './app.component.html'
 })
 export class AppComponent {
-    public menuShown = true;
+    public menuShown = false;
 
     public toggleMenu() {
         this.menuShown = !this.menuShown;

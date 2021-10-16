@@ -2,9 +2,47 @@
     .nav-item {
         color: $info;
 
-        &.active {
-            color: $primary;
-            font-weight: bold;
+        .nav-link {
+            &.active {
+                color: $primary;
+                font-weight: bold;
+            }
         }
+    }
+}
+
+.sidebar__menu--container {
+    max-width: 0px;
+    padding: 0;
+    transition: linear 0.5s;
+
+    &.menu--shown {
+        max-width: 250px;
+        padding: 0;
+
+        .sidebar__menu {
+            max-width: 250px;
+            padding: 15px;
+            z-index: 1;
+        }
+    }
+}
+
+.sidebar__menu {
+    display: flex;
+    flex-direction: column;
+    max-width: 0px;
+    background: $white;
+    color: $primary;
+    min-height: 100vh;
+    position: sticky;
+    top: 0;
+    box-shadow: -1px 0px 5px 1px rgb(0, 0, 0, 0.5);
+    transition: linear 0.5s;
+
+    .sidebar__menu--header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
 }

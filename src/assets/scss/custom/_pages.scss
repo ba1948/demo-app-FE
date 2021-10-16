@@ -1,0 +1,35 @@
+.card__counter--home {
+    height: 100px;
+    padding: 0;
+
+    .card-body {
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $white;
+
+        @include media-breakpoint-down(md) {
+            font-size: 12px;
+        }
+    }
+}
+
+
+.messages__log--filters__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.messages__log--container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.filters__container {
+    padding-bottom: 20px;
+}

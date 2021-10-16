@@ -1,0 +1,42 @@
+<div class="filters__container">
+    <form>
+        <div class="form-row">
+            <div class="col">
+                <ngb-datepicker #dp (dateSelect)="onDateSelection($event)" [displayMonths]="1" [dayTemplate]="t" outsideDays="hidden"></ngb-datepicker>
+
+                <ng-template #t let-date let-focused="focused">
+                    <span class="custom-day"
+                            [class.focused]="focused"
+                            [class.range]="isRange(date)"
+                            [class.faded]="isHovered(date) || isInside(date)"
+                            (mouseenter)="hoveredDate = date"
+                            (mouseleave)="hoveredDate = null">
+                        {{ date.day }}
+                    </span>
+                </ng-template>
+            </div>
+            <div class="col d-flex flex-column">
+                <div class="form-group">
+                    <select class="form-control" (change)="countryChanged($event)">
+                        <option [value]="0">Select Country</option>
+                        <option *ngFor="let country of countries" [value]="country['cnt_id']">
+                            {{ country['cnt_title'] }}
+                        </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <select class="form-control" (change)="userChanged($event)">
+                        <option [value]="0">Select User</option>
+                        <option *ngFor="let user of users" [value]="user['usr_id']">
+                            {{ user['usr_name'] }}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-12 pt-2">
+                <button (click)="filter()" type="button" class="btn btn-success w-100">Filter</button>
+            </div>
+        </div>
+    </form>
+</div>

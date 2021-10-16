@@ -1,7 +1,7 @@
 <div class="page__wrapper">
 
     <div class="main__container container-fluid p-0">
-        <div class="col-2 sidebar__menu--container">
+        <div class="col-2 sidebar__menu--container" [ngClass]="{ 'menu--shown': menuShown }">
             <aside class="sidebar__menu">
                 <div class="sidebar__menu--header">
                     <h1>
@@ -11,13 +11,13 @@
 
                 <nav class="side__navbar">
                     <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a href="#" class="nav-link">
+                        <li class="nav-item">
+                            <a [routerLink]="[ '/' ]" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" class="nav-link">
                                 Home
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a [routerLink]="[ '/messages-log' ]" routerLinkActive="active" class="nav-link">
                                 Messages Log
                             </a>
                         </li>
@@ -29,11 +29,13 @@
 
         <div class="col p-0">
             <header class="main__header">
-                Header
+                <button type="button" (click)="toggleMenu()">
+                    click
+                </button>
             </header>
 
             <main class="container-fluid content__container">
-                Main
+                <router-outlet></router-outlet>
             </main>
         </div>
     </div>

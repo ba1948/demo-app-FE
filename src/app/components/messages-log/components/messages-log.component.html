@@ -1,0 +1,38 @@
+<div class="container-fluid">
+    <div *ngIf="errors && errors.length" class="row">
+        <div class="alert alert-danger w-100" role="alert">
+            <ul>
+                <li *ngFor="let error of errors">
+                    {{ error }}
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="messages__log--filters__container">
+            <messages-log-filters></messages-log-filters>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="messages__log--container">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Successfully sent</th>
+                        <th scope="col">Failed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let log of data">
+                        <td>{{ log['date'] }}</td>
+                        <td>{{ log['success'] }}</td>
+                        <td>{{ log['failed'] }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
